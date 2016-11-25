@@ -1,0 +1,48 @@
+html,body{
+   height: 100%;
+   margin: 0;
+}
+
+body{
+   min-width: 1000px;
+   background: url(../background.jpg);
+
+   /*布局设置*/
+   display: flex;
+}
+
+#container{
+   margin: auto;
+
+   text-align: center;
+   /*形状设置*/
+   height:500px;
+   width:30%;
+   border: 5px solid blue;
+}
+
+#SwitchContainer{
+   /*形状设置*/
+   width: 100%;
+   height: 10%;
+   border-bottom: 2px solid red;
+   /*颜色设置*/
+   background: white;
+}
+
+.item {
+   height: 100%;
+   width: 20%;
+
+   text-decoration: none;
+}
+
+/**********两个表单的初始化设置*********/
+
+#SignIn_form{
+
+}
+
+#SignUp_form{
+   display: none;
+}
