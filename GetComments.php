@@ -1,13 +1,13 @@
 <?php
 
-  $conn = new mysqli("localhost", "这是数据库所有者", "这是数据库密码","WebSite");
+  require_once("/var/www/html/include/ConnectToDatabase.php");
 
   $sql="SELECT * FROM comments";
   $result = $conn->query($sql);
 
-while($row = $result->fetch_assoc())
-{
-    echo $row['Value']."      ---".$row['User']."<br>" ;
-}
+  while($row = $result->fetch_assoc())
+  {
+     echo $row['Value']."      ---".$row['User']."<br>" ;
+  }
 
 ?>
