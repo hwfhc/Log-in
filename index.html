@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>主页</title>
+
+    <link rel="stylesheet" href="index/style.css">
+    <script src="index/js.js"></script>
 </head>
 <body>
+<div id="container">
 
-  <p><b>登录一波:</b></p>
+      <div id="SwitchContainer"><!--登录注册的两个按钮-->
+          <button onclick="SignIn_switch()" class="item">登录</button>
+          <button onclick="SignUp_switch()" class="item">注册</button>
+      </div>
 
-  <form action="SignIn.php" method="post">
-      用户名:<br>
-      <input type="text" name="username">
-      <br>
-      密码:<br>
-      <input type="text" name="password">
-      <br><br>
-      <input type="submit" value="登录">
-  </form>
+      <form action="SignIn.php" method="post" id="SignIn_form">
+          <p>用户名:</p>
+          <input type="text" name="username">
+          <br>
+          <p>密码:</p>
+          <input type="password" name="password">
+          <br><br>
+          <input type="submit" value="登录">
+      </form>
 
-<p><b>注册一波:</b></p>
+      <form action="SignUp.php" method="post" id="SignUp_form">
+          <p>用户名:</p>
+          <input type="text" name="username">
+          <br>
+          <p>密码:</p>
+         <input type="password" name="password">
+          <br><br>
+          <input type="submit" value="注册">
+      </form>
 
-<form action="SignUp.php" method="post">
-    用户名:<br>
-    <input type="text" name="username">
-    <br>
-    密码:<br>
-    <input type="text" name="password">
-    <br><br>
-    <input type="submit" value="注册">
-</form>
+</div>
 
 </body>
 </html>

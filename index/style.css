@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+form {
+  /*表单居中*/
+  text-align: center;
+}
+body {
+  font-family: 微软雅黑,楷体,宋体,serif;
+  min-width: 1000px;
+  background: url(../background.jpg);
+  /*布局设置*/
+  display: flex;
+}
+/******************以上为初始化*************************/
+#container {
+  /*居中设置*/
+  margin: auto;
+  /*形状设置*/
+  height: 500px;
+  width: 30%;
+  border: 5px solid blue;
+  box-shadow: 0 0 20px black;
+  /*背景设置*/
+  background: white;
+}
+#SwitchContainer {
+  /*形状设置*/
+  width: 100%;
+  height: 10%;
+  border-bottom: 2px solid #4b7adc;
+  /*颜色设置*/
+  background: white;
+  display: flex;
+}
+#SwitchContainer .item {
+  /*位置设置*/
+  margin: auto;
+  /*形状设置*/
+  height: 100%;
+  width: 40%;
+  border: none;
+  /*颜色设置*/
+  background-color: #20dd2d;
+  color: white;
+  /*内部文本设置*/
+  text-align: center;
+  font-size: 20px;
+}
+#SwitchContainer .item:hover {
+  animation: 1s colorchange2 forwards;
+}
+@keyframes colorchange2 {
+  0% {
+    background: #20dd2d;
+    box-shadow: none;
+  }
+  100% {
+    background: #50c800;
+    box-shadow: 0 0 10px black;
+  }
+}
+/**********两个表单的初始化设置*********/
+#SignIn_form {
+  margin: auto;
+}
+#SignUp_form {
+  margin: auto;
+  display: none;
+}
+input[type=text] {
+  /*形状设置*/
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+input[type=password] {
+  /*形状设置*/
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+input[type=submit] {
+  /*位置设置*/
+  margin: auto;
+  /*形状设置*/
+  height: 60px;
+  width: 60%;
+  border: none;
+  border-radius: 10%;
+  /*颜色设置*/
+  background-color: #4049dd;
+  color: white;
+  /*内部文本设置*/
+  font-size: 20px;
+}
+input[type=submit]:hover {
+  animation: 1s colorchange forwards;
+}
+@keyframes colorchange {
+  0% {
+    background: #4049dd;
+    box-shadow: none;
+  }
+  100% {
+    background: #000cdd;
+    box-shadow: 0 0 10px black;
+  }
+}

@@ -11,28 +11,15 @@
   $password = $_POST["password"];
 
   /***************创建连接*******************/
-  require_once("/var/www/html/include/GetUser.php");
+  $conn = new mysqli("localhost", "这是数据库所有者", "这是数据库密码","WebSite");
 
-  /***************注册部分******************/
-  if($username != "" && $password != "")
-  {
-    if(GetUser($username) == false){
-        //sql存储要对数据库进行的操作
-        $sql = "INSERT INTO USER VALUES ('$username', '$password')";
+  //sql存储要对数据库进行的操作
+  $sql = "INSERT INTO USER VALUES ('$username', '$password')";
 
-        if ($Connect->query($sql) === TRUE){
-          echo "<p>注册成功</p>";
-        }
-        else {
-          echo "<p>注册失败</p>";
-        }
-    }
-    else {
-        echo "<p>该用户名已存在</p>";
-    }
-  }
-  else{
-    echo "<h1>账号或密码不能为空！</h1>";
+  if ($conn->query($sql) === TRUE) {
+      echo "<p>注册成功</p>";
+  } else {
+      echo "<p>注册失败</p>";
   }
 
   ?>
