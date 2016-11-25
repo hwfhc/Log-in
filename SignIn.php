@@ -3,7 +3,7 @@
 //从WebSite数据库中提取数据
 function collect_data($username)
 {
-     $conn = new mysqli("localhost", "这是数据库所有者", "这是数据库密码","WebSite");
+     require_once "include/ConnectToDatabase.php";
 
      $sql = "SELECT * FROM USER WHERE Username='$username'";
      $result = $conn->query($sql);

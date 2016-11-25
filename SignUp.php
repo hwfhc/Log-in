@@ -11,7 +11,7 @@
   $password = $_POST["password"];
 
   /***************创建连接*******************/
-  $conn = new mysqli("localhost", "这是数据库所有者", "这是数据库密码","WebSite");
+  require_once("include/ConnectToDatabase.php");
 
   //sql存储要对数据库进行的操作
   $sql = "INSERT INTO USER VALUES ('$username', '$password')";
