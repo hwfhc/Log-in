@@ -3,7 +3,7 @@
     $value = $_POST["value"];
 
 /***************创建连接*******************/
-    require_once("include/ConnectToDatabase.php");
+    require_once("/var/www/html/include/ConnectToDatabase.php");
 
     if($user == ''){
       echo '咱能先登陆吗';

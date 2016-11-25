@@ -11,15 +11,28 @@
   $password = $_POST["password"];
 
   /***************创建连接*******************/
-  require_once("include/ConnectToDatabase.php");
+  require_once("/var/www/html/include/GetUser.php");
 
-  //sql存储要对数据库进行的操作
-  $sql = "INSERT INTO USER VALUES ('$username', '$password')";
+  /***************注册部分******************/
+  if($username != "" && $password != "")
+  {
+    if(GetUser($username) == false){
+        //sql存储要对数据库进行的操作
+        $sql = "INSERT INTO USER VALUES ('$username', '$password')";
 
-  if ($conn->query($sql) === TRUE) {
-      echo "<p>注册成功</p>";
-  } else {
-      echo "<p>注册失败</p>";
+        if ($Connect->query($sql) === TRUE){
+          echo "<p>注册成功</p>";
+        }
+        else {
+          echo "<p>注册失败</p>";
+        }
+    }
+    else {
+        echo "<p>该用户名已存在</p>";
+    }
+  }
+  else{
+    echo "<h1>账号或密码不能为空！</h1>";
   }
 
   ?>

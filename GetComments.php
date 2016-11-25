@@ -1,6 +1,6 @@
 <?php
 
-  require_once("include/ConnectToDatabase.php");
+  require_once("/var/www/html/include/ConnectToDatabase.php");
 
   $sql="SELECT * FROM comments";
   $result = $conn->query($sql);
