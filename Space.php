@@ -25,24 +25,25 @@ function Refresh() {
 </script>
 
 <div id="container">
+  <div id="InputContainer">
 
-<div id="InputContainer">
-
-    <form method="POST" action="PostComments.php">
-        评论:<br>
-        <input type="text" name="value">
-        <br>
-        <input type="submit" value="发表">
-    </form>
+     <form method="POST" action="PostComments.php">
+         评论:<br>
+         <input type="text" name="value">
+         <br>
+         <input type="submit" value="发表">
+     </form>
 
     <button onclick="Refresh()">刷新</button>
+  </div>
 
+  <div id="CommentContainer">
+  </div>
 </div>
 
-<div id="CommentContainer">
-</div>
-
-</div>
+<script>
+Refresh();
+</script>
 
 </body>
 
