@@ -35,7 +35,6 @@ function Refresh() {
     <button onclick="Refresh()">刷新</button>
 
     <div id="CommentContainer">
-    eagfrsdgf
     </div>
 </div>
 

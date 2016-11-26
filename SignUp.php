@@ -20,7 +20,7 @@
         //sql存储要对数据库进行的操作
         $sql = "INSERT INTO USER VALUES ('$username', '$password')";
 
-        if ($Connect->query($sql) === TRUE){
+        if ($Connect->query($sql) == TRUE){
           echo "<p>注册成功</p>";
         }
         else {
