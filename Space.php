@@ -23,7 +23,7 @@ function Refresh() {
 
   xmlhttp.onreadystatechange=function() {
     if (this.readyState==4 && this.status==200) {
-      document.getElementById("txtHint").innerHTML=this.responseText;
+      document.getElementById("CommentContainer").innerHTML=this.responseText;
     }
   }
   xmlhttp.open("GET","GetComments.php",true);
@@ -31,7 +31,7 @@ function Refresh() {
 }
 </script>
 
-<div id="txtHint"></div>
+<div id="CommentContainer"></div>
 
 </body>
 </html>

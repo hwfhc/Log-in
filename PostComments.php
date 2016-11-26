@@ -11,6 +11,6 @@
     else {
       //sql存储要对数据库进行的操作
       $sql = "INSERT INTO comments VALUES ('$value','$user')";
-      $conn->query($sql);
+      $Connect->query($sql);
     }
 ?>

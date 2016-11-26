@@ -4,7 +4,7 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $row = collect_data($username);
+    $row = GetUser($username);
     if(($row['Username'] == $username) && ($row['Password'] == $password))
     {
        echo "反正登录成功";
