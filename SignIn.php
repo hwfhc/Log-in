@@ -6,7 +6,7 @@ function collect_data($username)
      $conn = new mysqli("localhost", "这是数据库所有者", "这是数据库密码","WebSite");
 
      $sql = "SELECT * FROM USER WHERE Username='$username'";
-     $result = $conn->query($sql);
+     $result = $Connect->query($sql);
      $row = $result->fetch_assoc();
 
      return $row;
