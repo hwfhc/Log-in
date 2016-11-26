@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>主页</title>
+
+    <link rel="stylesheet" href="Sign/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 </head>
 <body>
+<div>
+  <img src="fun.png">
 
   <?php
   $username = $_POST["username"];
@@ -32,12 +38,13 @@
     }
   }
   else{
-    echo "<h1>账号或密码不能为空！</h1>";
+    echo "<p>账号或密码不能为空</p>";
   }
 
   ?>
 
   <a href="index.html">跳转回主页</a>
+</div>
 
 </body>
 </html>

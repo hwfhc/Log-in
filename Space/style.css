@@ -9,7 +9,6 @@ body {
 }
 body {
   font-family: 微软雅黑,楷体,宋体,serif;
-  min-width: device-width;
   background: url(../background.jpg);
 }
 /************************关于表单和按钮的设置**************************/
