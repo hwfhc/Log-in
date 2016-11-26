@@ -1,0 +1,118 @@
+/****************************初始化部分************************************/
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: 微软雅黑,楷体,宋体,serif;
+  min-width: device-width;
+  background: url(../background.jpg);
+  /*布局设置*/
+  display: flex;
+}
+/************************关于表单和按钮的设置**************************/
+button {
+  /*间距设置*/
+  margin: 10px 0 0 0;
+  /*形状设置*/
+  height: 60px;
+  width: 120px;
+  border: none;
+  border-radius: 10%;
+  /*颜色设置*/
+  background-color: #20dd2d;
+  color: white;
+  /*内部文本设置*/
+  font-size: 20px;
+}
+button:hover {
+  animation: 1s colorchange2 forwards;
+}
+@keyframes colorchange2 {
+  0% {
+    background: #20dd2d;
+    box-shadow: none;
+  }
+  100% {
+    background: #50c800;
+    box-shadow: 0 0 10px black;
+  }
+}
+form {
+  /*间距设置*/
+  margin: 10px 0 0 0;
+  /*内部元素居中*/
+  text-align: center;
+  /*形状设置*/
+  height: 150px;
+  width: 100%;
+  border: 2px solid black;
+  /*颜色设置*/
+  background-color: white;
+  box-shadow: 0 0 10px black;
+}
+input[type=text] {
+  /*形状设置*/
+  width: 90%;
+  padding: 12px 2px 1px 3px;
+  margin: 8px 0;
+  /*边界设置*/
+  border: none;
+  border-bottom: 2px solid red;
+  /*取消点击时外部的框*/
+  outline: medium;
+}
+input[type=submit] {
+  /*位置设置*/
+  margin: auto;
+  /*形状设置*/
+  height: 40px;
+  width: 100px;
+  border: none;
+  border-radius: 10%;
+  /*颜色设置*/
+  background-color: #4049dd;
+  color: white;
+  /*内部文本设置*/
+  font-size: 20px;
+}
+input[type=submit]:hover {
+  animation: 1s colorchange forwards;
+}
+@keyframes colorchange {
+  0% {
+    background: #4049dd;
+    box-shadow: none;
+  }
+  100% {
+    background: #000cdd;
+    box-shadow: 0 0 10px black;
+  }
+}
+/************************实体评论部分设置**************************/
+#CommentContainer {
+  /*间距设置*/
+  margin: 5px 0 0 0;
+  /*形状设置*/
+  width: 100%;
+  height: 100%;
+  /*颜色设置*/
+  background: red;
+}
+#container {
+  /*内部布局设置*/
+  display: flex;
+  flex-direction: column;
+  /*位置设置*/
+  position: relative;
+  margin: auto;
+  /*形状设置*/
+  width: 90%;
+  height: 100%;
+  /*颜色设置*/
+  background: blue;
+}
