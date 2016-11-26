@@ -43,12 +43,13 @@ button:hover {
   }
 }
 form {
+  overflow: hidden;
   /*间距设置*/
   margin: 10px 0 0 0;
   /*内部元素居中*/
   text-align: center;
   /*形状设置*/
-  height: 150px;
+  height: 40%;
   width: 100%;
   border: 2px solid black;
   /*颜色设置*/

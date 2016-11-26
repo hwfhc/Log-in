@@ -12,7 +12,8 @@ form {
 }
 body {
   font-family: 微软雅黑,楷体,宋体,serif;
-  min-width: 1000px;
+  min-width: device-width;
+  /*需!!!!!!!!!!!!!!!*/
   background: url(../background.jpg);
   /*布局设置*/
   display: flex;
