@@ -6,7 +6,10 @@
 
 while($row = $result->fetch_assoc())
 {
-    echo $row['Value']."      ---".$row['User']."<br>" ;
+    $value = $row['Value'];
+    $user = $row['User'];
+    echo "<div class='user'>".$row['User']."</div>" ;
+    echo "<div class='comment'>".$row['Value']."</div>" ;
 }
 
 ?>

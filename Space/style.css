@@ -11,8 +11,6 @@ body {
   font-family: 微软雅黑,楷体,宋体,serif;
   min-width: device-width;
   background: url(../background.jpg);
-  /*布局设置*/
-  display: flex;
 }
 /************************关于表单和按钮的设置**************************/
 button {
@@ -49,7 +47,7 @@ form {
   /*内部元素居中*/
   text-align: center;
   /*形状设置*/
-  height: 40%;
+  height: 60%;
   width: 100%;
   border: 2px solid black;
   /*颜色设置*/
@@ -96,18 +94,30 @@ input[type=submit]:hover {
 }
 /************************实体评论部分设置**************************/
 #CommentContainer {
+  position: absolute;
   /*间距设置*/
   margin: 5px 0 0 0;
   /*形状设置*/
   width: 100%;
-  height: 100%;
+  height: 100px;
   /*颜色设置*/
-  background: red;
+  background: blue;
 }
-#container {
+#InputContainer {
+  border: 1px solid black;
   /*内部布局设置*/
   display: flex;
   flex-direction: column;
+  /*位置设置*/
+  position: relative;
+  margin: auto;
+  /*形状设置*/
+  width: 100%;
+  height: 40%;
+  /*颜色设置*/
+  background: blue;
+}
+#container {
   /*位置设置*/
   position: relative;
   margin: auto;
@@ -116,4 +126,25 @@ input[type=submit]:hover {
   height: 100%;
   /*颜色设置*/
   background: blue;
+}
+/*单个评论的设置*/
+.comment {
+  /*形状设置*/
+  width: 100%;
+  border-bottom: 1px solid black;
+  min-height: 50px;
+  /*颜色设置*/
+  color: black;
+  background-color: white;
+}
+.user {
+  /*形状设置*/
+  height: 30px;
+  width: 100%;
+  border-top: 1px solid black;
+  border-left: 5px solid #0fda00;
+  border-bottom: 2px solid red;
+  /*颜色设置*/
+  color: black;
+  background-color: #c7d9d6;
 }
