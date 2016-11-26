@@ -29,7 +29,7 @@ function Refresh() {
 
      <form method="POST" action="PostComments.php">
          评论:<br>
-         <input type="text" name="value">
+         <input type="text" name="value" autocomplete="off">
          <br>
          <input type="submit" value="发表">
      </form>
