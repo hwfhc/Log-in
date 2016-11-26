@@ -1,9 +1,8 @@
 <?php
 
-  $conn = new mysqli("localhost", "这是数据库所有者", "这是数据库密码","WebSite");
-
+  $Connect = new mysqli("localhost", "root", "879574764","WebSite");
   $sql="SELECT * FROM comments";
-  $result = $conn->query($sql);
+  $result = $Connect->query($sql);
 
 while($row = $result->fetch_assoc())
 {
