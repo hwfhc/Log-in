@@ -6,6 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="Space/style.css">
+    <script src="Space/js.js"></script>
 </head>
 <body>
 
@@ -25,6 +26,8 @@ function Refresh() {
 
 <div id="container">
 
+<div id="InputContainer">
+
     <form method="POST" action="PostComments.php">
         评论:<br>
         <input type="text" name="value">
@@ -34,9 +37,13 @@ function Refresh() {
 
     <button onclick="Refresh()">刷新</button>
 
-    <div id="CommentContainer">
-    </div>
+</div>
+
+<div id="CommentContainer">
+</div>
+
 </div>
 
 </body>
+
 </html>
