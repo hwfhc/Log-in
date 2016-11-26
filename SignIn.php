@@ -1,9 +1,9 @@
 <?php
 /***************创建连接*******************/
 //从WebSite数据库中提取数据
-function collect_data($username)
+function GetUser($username)
 {
-     $conn = new mysqli("localhost", "这是数据库所有者", "这是数据库密码","WebSite");
+     $Connect = new mysqli("localhost", "这是数据库所有者", "这是数据库密码","WebSite");
 
      $sql = "SELECT * FROM USER WHERE Username='$username'";
      $result = $Connect->query($sql);
