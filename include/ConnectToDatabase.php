@@ -5,5 +5,5 @@
  *
  */
 
-    $Connect = new mysqli("localhost", "root", "879574764","WebSite");
+    $Connect = new mysqli("localhost", "root", "","WebSite");
 ?>
