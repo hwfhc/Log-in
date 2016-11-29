@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>主页</title>
+    <title>划水</title>
 
     <link rel="stylesheet" href="Sign/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />

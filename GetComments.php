@@ -1,6 +1,6 @@
 <?php
+  require_once("/var/www/html/include/ConnectToDatabase.php");
 
-  $Connect = new mysqli("localhost", "root", "879574764","WebSite");
   $sql="SELECT * FROM comments";
   $result = $Connect->query($sql);
 
