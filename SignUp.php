@@ -15,6 +15,7 @@
   <?php
   $username = $_POST["username"];
   $password = $_POST["password"];
+  $password_ensure = $_POST["password_ensure"];
 
   /***************创建连接*******************/
   require_once("/var/www/html/include/GetUser.php");
@@ -23,6 +24,11 @@
   if($username != "" && $password != "")
   {
     if(GetUser($username) == false){
+      if($password != $password_ensure)
+      {
+         echo "<p>两次输入的密码不同</p>";
+      }
+      else {
         //sql存储要对数据库进行的操作
         $sql = "INSERT INTO USER VALUES ('$username', '$password')";
 
@@ -32,6 +38,7 @@
         else {
           echo "<p>注册失败</p>";
         }
+      }
     }
     else {
         echo "<p>该用户名已存在</p>";

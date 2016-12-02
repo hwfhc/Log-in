@@ -1,4 +1,8 @@
 <?php
+ /*
+  *效果说明:
+  *获取评论
+  */
   require_once("/var/www/html/include/ConnectToDatabase.php");
 
   $sql="SELECT * FROM comments";

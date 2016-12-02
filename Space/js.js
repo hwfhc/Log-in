@@ -1,14 +1,11 @@
-function Comment(value,user){
-   this.value = value;
-   this.user = user;
-}
+function Refresh() {
+  var xmlhttp=new XMLHttpRequest();
 
-function init(){
-  document.getElementById('CommentContainer').style.height = "800px";
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("CommentContainer").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","GetComments.php",true);
+  xmlhttp.send();
 }
-
-Comment.prototype.draw = function () {
-  var node = document.createElement('div');
-  node.innerHTML = this.value + this.user;
-  document.getElementById('CommentContainer').appendChild(node);
-};

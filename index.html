@@ -13,11 +13,10 @@
 <div id="container">
 
       <div id="SwitchContainer"><!--登录注册的两个按钮-->
-          <button onclick="SignIn_switch()" class="item">登录</button>
-          <button onclick="SignUp_switch()" class="item">注册</button>
+          <button onclick="Switch()" class="item">切换</button>
       </div>
 
-      <form action="SignIn.php" method="post" id="SignIn_form">
+      <form action="SignIn.php" method="post" id="SignIn_form"><!--登陆表单-->
           <p>用户名:</p>
           <input type="text" name="username" autocomplete="off">
           <br>
@@ -27,14 +26,16 @@
           <input type="submit" value="登录">
       </form>
 
-      <form action="SignUp.php" method="post" id="SignUp_form">
+      <form action="SignUp.php" method="post" id="SignUp_form"><!--注册表单-->
           <p>用户名:</p>
-          <input type="text" name="username" autocomplete="off">
+          <input type="text" name="username" autocomplete="off" onkeyup="IsRepeat(this)">
           <br>
           <p>密码:</p>
-         <input type="password" name="password" >
+          <input type="password" name="password" onkeyup="IsSame()">
+          <p>确认密码:</p>
+          <input type="password" name="password_ensure" onkeyup="IsSame()">
           <br><br>
-          <input type="submit" value="注册">
+          <input type="submit" disabled="disabled" value="注册">
       </form>
 
 </div>

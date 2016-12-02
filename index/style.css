@@ -85,7 +85,7 @@ input[type=password] {
   padding: 12px 20px;
   margin: 8px 0;
 }
-input[type=submit] {
+input[type=submit]:enabled {
   /*位置设置*/
   margin: auto;
   /*形状设置*/
@@ -94,21 +94,33 @@ input[type=submit] {
   border: none;
   border-radius: 10%;
   /*颜色设置*/
-  background-color: #4049dd;
+  background-color: #000cdd;
   color: white;
   /*内部文本设置*/
   font-size: 20px;
 }
-input[type=submit]:hover {
+input[type=submit]:enabled:hover {
   animation: 1s colorchange forwards;
 }
 @keyframes colorchange {
   0% {
-    background: #4049dd;
     box-shadow: none;
   }
   100% {
-    background: #000cdd;
     box-shadow: 0 0 10px black;
   }
+}
+input[type=submit]:disabled {
+  /*位置设置*/
+  margin: auto;
+  /*形状设置*/
+  height: 60px;
+  width: 60%;
+  border: none;
+  border-radius: 10%;
+  /*颜色设置*/
+  background-color: grey;
+  color: white;
+  /*内部文本设置*/
+  font-size: 20px;
 }

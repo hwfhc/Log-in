@@ -15,7 +15,6 @@ form{
 body{
    font-family: 微软雅黑,楷体,宋体,serif;
 
-
    background: url(../background.jpg);
 
    /*布局设置*/
@@ -87,6 +86,7 @@ body{
    display: none;
 }
 
+//设置文本框
 input[type=text] {
    /*形状设置*/
    width: 80%;
@@ -101,7 +101,8 @@ input[type=password] {
    margin: 8px 0;
 }
 
-input[type=submit] {
+//设置submit可用状态
+input[type=submit]:enabled {
    /*位置设置*/
    margin: auto;
    /*形状设置*/
@@ -110,7 +111,7 @@ input[type=submit] {
    border: none;
    border-radius: 10%;
    /*颜色设置*/
-   background-color: #4049dd;
+   background-color: #000cdd;
    color: white;
    /*内部文本设置*/
    font-size: 20px;
@@ -121,12 +122,26 @@ input[type=submit] {
 
    @keyframes colorchange{
       0%{
-         background: #4049dd;
          box-shadow: none;
       }
       100%{
-         background: #000cdd;
          box-shadow: 0 0 10px black;
       }
    }
+}
+
+//设置submit不可用状态
+input[type=submit]:disabled {
+  /*位置设置*/
+  margin: auto;
+  /*形状设置*/
+  height: 60px;
+  width: 60%;
+  border: none;
+  border-radius: 10%;
+  /*颜色设置*/
+  background-color: grey;
+  color: white;
+  /*内部文本设置*/
+  font-size: 20px;
 }
