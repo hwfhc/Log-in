@@ -3,21 +3,23 @@
  *效果说明:
  *在登录和注册界面间切换
  */
-var Switch = SignUp_switch;
-
-function SignIn_switch()
-{
-    document.getElementById('SignUp_form').style.display = 'none';
-    document.getElementById('SignIn_form').style.display = 'block';
-    Switch = SignUp_switch;
+Switch.prototype.ToSignIn = function(){
+  document.getElementById('SignUp_form').style.display = 'none';
+  document.getElementById('SignIn_form').style.display = 'block';
+  this.act = this.ToSignUp;
 }
 
-function SignUp_switch()
-{
-    document.getElementById('SignIn_form').style.display = 'none';
-    document.getElementById('SignUp_form').style.display = 'block';
-    Switch = SignIn_switch;
+Switch.prototype.ToSignUp = function(){
+  document.getElementById('SignIn_form').style.display = 'none';
+  document.getElementById('SignUp_form').style.display = 'block';
+  this.act = this.ToSignIn;
 }
+
+function Switch(){
+  this.act = this.ToSignUp;
+}
+
+var change = new Switch();
 
 /*------------------------注册判断--------------------------------*/
 
@@ -40,6 +42,22 @@ function EnableSubmit()
   }
 }
 
+function IsValid(string)
+{
+  /*
+   *效果说明:
+   *判断string是否合法(暂时不为空)
+   *true:合法
+   *false:不合法
+   */
+   if( string != '' ){
+     return true;
+   }
+   else{
+     return false;
+   }
+}
+
 function IsSame()
 {
   /*
@@ -52,7 +70,7 @@ function IsSame()
     var password_ensure = document.getElementById('SignUp_form').getElementsByTagName('input')[2];
 
     //判断密码，并修改边框和背景
-    if( password.value === password_ensure.value && password.value != ''){
+    if( password.value === password_ensure.value && IsValid(password.value) ){
       passwordIsSame = true;
 
       password.style.border = '2px solid green';
@@ -83,15 +101,34 @@ function IsRepeat(element)
    *判断用户名是否已存在
    *element:输入框元素
    *
-   *只有一个XMLHttpRequest对象，每次触发函数时都将重置这个对象
-   *之前发送的请求相当于无效(虽然)
+   *只有一个XMLHttpRequest对象，每次触发函数时都将重新调用send(输入不合法除外)
+   *之前发送的请求相当于无效(但是控制台显示他们的状态是取消)
+
+   (复制)
+   每个xmlhttp对象的一次send只能对应相应一个onreadystatechange事件，
+   这样当第一次调用后，
+   立即发出第二次调用，
+   则onreadystatechange会反映第二次调用的状况，
+   因此如果有需求需要连续两次或者两次以上调用Send函数，
+   则必须每次使用不同的xmlhttp对象
+
    */
 
-   /*初始化输入框背景*/
+   //初始化输入框背景
    element.style.border = '2px solid orange';
    element.style.background = '#f8fc50';
    usernameIsUnique = false;
 
+   //若输入框值不合法，则不发送请求
+   if(IsValid(element.value) != true){
+     element.style.border = '2px solid red';
+     element.style.background = '#ff9c7a';
+     //设置收到response时不进行任何操作
+     xhttp.onreadystatechange = function() {};
+     return;
+   }
+
+   //发送请求
    xhttp.onreadystatechange = function() {
    if (this.readyState == 4 && this.status == 200) {
          if(this.responseText == "false"){//false代表用户名尚未使用
@@ -106,7 +143,7 @@ function IsRepeat(element)
          }
       }
 
-      EnableSubmit();
+    EnableSubmit();
     };
 
     //用url发送参数
