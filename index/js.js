@@ -42,15 +42,26 @@ function EnableSubmit()
   }
 }
 
-function IsValid(string)
+function IsValid(string,type)
 {
   /*
    *效果说明:
    *判断string是否合法(暂时不为空)
    *true:合法
    *false:不合法
+   *type:0代表判断用户名，1代表判断密码
    */
-   if( string != '' ){
+
+   //如果匹配结果为true则含有非法输入(中文英文下划线数字以外字符)
+   switch(type)
+   {
+     case 0:
+        var match = new RegExp(/[^\u4e00-\u9fa5\w]/);break;
+     case 1:
+        var match = new RegExp(/[^\w]/);break;
+   }
+
+   if( string != '' && string.length <= 12 && match.test(string) != true ){
      return true;
    }
    else{
@@ -70,7 +81,7 @@ function IsSame()
     var password_ensure = document.getElementById('SignUp_form').getElementsByTagName('input')[2];
 
     //判断密码，并修改边框和背景
-    if( password.value === password_ensure.value && IsValid(password.value) ){
+    if( password.value === password_ensure.value && IsValid(password.value,1) ){
       passwordIsSame = true;
 
       password.style.border = '2px solid green';
@@ -120,7 +131,7 @@ function IsRepeat(element)
    usernameIsUnique = false;
 
    //若输入框值不合法，则不发送请求
-   if(IsValid(element.value) != true){
+   if(IsValid(element.value,0) != true){
      element.style.border = '2px solid red';
      element.style.background = '#ff9c7a';
      //设置收到response时不进行任何操作

@@ -24,11 +24,6 @@
   if($username != "" && $password != "")
   {
     if(GetUser($username) == false){
-      if($password != $password_ensure)
-      {
-         echo "<p>两次输入的密码不同</p>";
-      }
-      else {
         //sql存储要对数据库进行的操作
         $sql = "INSERT INTO USER VALUES ('$username', '$password')";
 
@@ -40,14 +35,6 @@
         }
       }
     }
-    else {
-        echo "<p>该用户名已存在</p>";
-    }
-  }
-  else{
-    echo "<p>账号或密码不能为空</p>";
-  }
-
   ?>
 
   <a href="index.html">跳转回主页</a>
